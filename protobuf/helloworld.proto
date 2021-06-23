@@ -1,0 +1,17 @@
+syntax = "proto3";
+package protobuf;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (User) {}
+  rpc SayHelloStream (stream HelloRequest) returns (stream User) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message User {
+  string name = 1;
+  string id = 2;
+  int32 age = 3;
+}
